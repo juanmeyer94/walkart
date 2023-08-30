@@ -1,11 +1,16 @@
 import { Button } from "@/components/ui/button"
-import NavBar from "./components/NavBar/navbar"
+import NavBar from "./components/NavBar/NavBar"
+import MakeItReal from "./components/MakeItReal/MakeItReal"
 
 
 function App() {
 
   return (
-    <NavBar/>
+    <div >
+  <NavBar/>
+  <MakeItReal/>
+    </div>
+  
   )
 }
 
