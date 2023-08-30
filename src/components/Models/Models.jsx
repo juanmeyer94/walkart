@@ -66,22 +66,28 @@ const modelos = [
 
 const Models = () => {
     const [hoveredModel, setHoveredModel] = useState(null);
+    const [selectedCategory, setSelectedCategory] = useState("Todos");
+  
+    const uniqueCategories = ["Todos", ...new Set(modelos.map((modelo) => modelo.category))];
+  
+    const filteredModelos = selectedCategory === "Todos" ? modelos : modelos.filter((modelo) => modelo.category === selectedCategory);
   
     return (
       <div>
         <div className="flex items-center justify-center py-4 md:py-8 flex-wrap">
-          {modelos.map((modelo, index) => (
+          {uniqueCategories.map((category, index) => (
             <button
               key={index}
               type="button"
               className={`text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center mr-3 mb-3 dark:text-white dark:focus:ring-gray-800`}
+              onClick={() => setSelectedCategory(category)}
             >
-              {modelo.name}
+              {category}
             </button>
           ))}
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {modelos.map((modelo, index) => (
+          {filteredModelos.map((modelo, index) => (
             <div
               key={index}
               className="relative"
