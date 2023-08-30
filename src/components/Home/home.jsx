@@ -1,13 +1,32 @@
-import React,  {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+import imagen1 from "./images/imagen1.jpg"
+import imagen2 from "./images/imagen2.jpg"
+import imagen3 from "./images/imagen3.jpg"
+import imagen4 from "./images/imagen4.jpg"
+
 const Home = () => {
+  const getImageSource = (imageNumber) => {
+    switch (imageNumber) {
+      case 1:
+        return imagen1;
+      case 2:
+        return imagen2;
+      case 3:
+        return imagen3;
+      case 4:
+        return imagen4;
+      default:
+        return imagen1; 
+    }
+  };
 
   const [currentImage, setCurrentImage] = useState(1);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage((prevImage) => (prevImage % 5) + 1);
+      setCurrentImage((prevImage) => (prevImage % 4) + 1);
     }, 5000);
 
     return () => {
@@ -16,18 +35,15 @@ const Home = () => {
   }, []);
 
   const backgroundImageStyle = {
-    backgroundImage: `url(./src/images/imagen${currentImage}.jpg)`, // Ruta a las imágenes ajustada
-  // "url('./src/image/leftside.jpg')"
-  // <div class="bg-[url('/public/fondo2.png')] min-h-screen  w-full bg-cover bg-center static">
+    backgroundImage: `url(${getImageSource(currentImage)})`,
   };
 
+
+
   return (
-    <div className="min-h-screen bg-cover bg-center" style={backgroundImageStyle}>
+    <div className="min-h-screen bg-cover bg-center"
+      style={backgroundImageStyle} >
 
-   {/* return (
-     <div className="min-h-screen bg-cover bg-center bg-gradient-to-b from-blue-300 to-blue-500 relative">  */}
-
-      {/* Div centrado en el margen izq */}
       <div className="absolute top-1/2 left-0 transform -translate-y-1/2 p-8">
         <h1 className="text-5xl text-white font-bold mb-4 ml-8">CALZADO</h1>
         <h1 className="text-5xl text-white font-bold mb-4 ml-8">DISEÑADO POR TI</h1>
@@ -35,7 +51,7 @@ const Home = () => {
           <Link to="/personalizar">PRUÉBALO AHORA</Link>
         </button>
       </div>
-      {/* Div en el margen inferior der */}
+
       <div className="absolute bottom-0 right-0 mb-8 ml-8 mr-8">
         <a href="https://api.whatsapp.com/send?phone=573233247269&text=Hola!%20Quiero%20ordenar%20mi%20par%20personalizado%20%3AD" target="blank">
           <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp" style={{ height: "60px" }} />

@@ -36,7 +36,7 @@ const MakeItReal = () => {
     return (
         <div className="flex flex-col lg:flex-row w-full">
             <div className="lg:w-1/2p-8 flex items-center justify-center">
-            <img src={air} alt="Air White" className="max-w-full h-auto" />
+            <img src={air} alt="Air White" className="max-w-full" />
             </div>
             <div className="lg:w-1/2 bg-white p-8">
               <h1>Lengueta:</h1>
