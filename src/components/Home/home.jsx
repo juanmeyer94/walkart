@@ -16,7 +16,7 @@ const Home = () => {
   }, []);
 
   const backgroundImageStyle = {
-    backgroundImage: `url(./src/images/imagen-${currentImage}.jpg)`, // Ruta a las imágenes ajustada
+    backgroundImage: `url(./src/images/imagen${currentImage}.jpg)`, // Ruta a las imágenes ajustada
   // "url('./src/image/leftside.jpg')"
   // <div class="bg-[url('/public/fondo2.png')] min-h-screen  w-full bg-cover bg-center static">
   };
