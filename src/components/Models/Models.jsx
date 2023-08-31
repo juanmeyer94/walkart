@@ -102,7 +102,7 @@ const Models = () => {
                 alt={modelo.name}
               />
               {hoveredModel === index && (
-                <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-75 text-white">
+                <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-75 text-white rounded-lg">
                   {modelo.name}
                 </div>
               )}
