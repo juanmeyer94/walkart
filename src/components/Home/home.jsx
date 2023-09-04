@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import imagen1 from "./images/imagen1.jpg"
-import imagen2 from "./images/imagen2.jpg"
-import imagen3 from "./images/imagen3.jpg"
-import imagen4 from "./images/imagen4.jpg"
+import imagen1 from "./images/imagen1.jpg";
+import imagen2 from "./images/imagen2.jpg";
+import imagen3 from "./images/imagen3.jpg";
+import imagen4 from "./images/imagen4.jpg";
 
 const Home = () => {
   const getImageSource = (imageNumber) => {
@@ -18,7 +18,7 @@ const Home = () => {
       case 4:
         return imagen4;
       default:
-        return imagen1; 
+        return imagen1;
     }
   };
 
@@ -38,12 +38,9 @@ const Home = () => {
     backgroundImage: `url(${getImageSource(currentImage)})`,
   };
 
-
-
   return (
-    <div className="min-h-screen bg-cover bg-center"
-      style={backgroundImageStyle} >
-
+    <div className="min-h-screen bg-cover bg-center relative" style={backgroundImageStyle}>
+      
       <div className="absolute top-1/2 left-0 transform -translate-y-1/2 p-8">
         <h1 className="text-5xl text-white font-bold mb-4 ml-8">CALZADO</h1>
         <h1 className="text-5xl text-white font-bold mb-4 ml-8">DISEÑADO POR TI</h1>
@@ -52,9 +49,9 @@ const Home = () => {
         </button>
       </div>
 
-      <div className="absolute bottom-0 right-0 mb-8 ml-8 mr-8">
+      <div className="absolute bottom-0 right-0 mb-4 md:mb-8 mr-4 md:mr-8">
         <a href="https://api.whatsapp.com/send?phone=573233247269&text=Hola!%20Quiero%20ordenar%20mi%20par%20personalizado%20%3AD" target="blank">
-          <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp" style={{ height: "60px" }} />
+          <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp" className="h-12 md:h-16" />
         </a>
       </div>
     </div>
@@ -62,4 +59,5 @@ const Home = () => {
 };
 
 export default Home;
+
 

@@ -6,6 +6,7 @@ import Models from "./components/Models/Models";
 import MakeItReal from "./components/MakeItReal/MakeItReal";
 
 
+
 function App() {
 
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/personalizar" element={<MakeItReal/>} />
         <Route path="/" element={<Home />} />
         <Route path="/models" element={<Models />} />
+        <Route path="/makeitreal" element={<MakeItReal />} />
         
       </Routes>
     </div>
