@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import NavBar from "../NavBar/navbar";
 
 import imagen1 from "./images/imagen1.jpg";
 import imagen2 from "./images/imagen2.jpg";
@@ -39,8 +40,9 @@ const Home = () => {
   };
 
   return (
+    
     <div className="min-h-screen bg-cover bg-center relative" style={backgroundImageStyle}>
-      
+      <NavBar/>
       <div className="absolute top-1/2 left-0 transform -translate-y-1/2 p-8">
         <h1 className="text-5xl text-white font-bold mb-4 ml-8">CALZADO</h1>
         <h1 className="text-5xl text-white font-bold mb-4 ml-8">DISEÑADO POR TI</h1>
