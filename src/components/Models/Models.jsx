@@ -4,7 +4,7 @@ const modelos = [
   {
     name: "Shadow",
     image: "https://i8.amplience.net/i/jpl/jd-333404-a-142a4d23278b7f965af65f04f5b71cbc",
-    description: "Una zapatilla de estilo único y moderno.",
+    description: "Las Zapatillas Elegantes son la última tendencia en el mundo de la moda. Diseñadas para aquellos que buscan un estilo único y moderno.",
     category: "Running",
   },
   {
@@ -119,11 +119,11 @@ const Models = () => {
       </div>
 
       //*MODAL*//
-      
+
       {selectedModel !== null && (
   <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
     <div className="bg-white rounded-lg shadow-lg w-full md:w-3/4 lg:w-2/3 xl:w-1/2 flex">
-      <div className="p-4 flex-shrink-0">
+      <div className="p-4 flex-shrink-0 w-1/2">
         <img
           src={filteredModelos[selectedModel].image}
           alt={filteredModelos[selectedModel].name}
@@ -132,106 +132,103 @@ const Models = () => {
         <h3 className="text-2xl font-bold mb-2">
           {filteredModelos[selectedModel].name}
         </h3>
-        <p className="mb-4 text-gray-600">
-          {filteredModelos[selectedModel].category}
+        <p className="mb-2 text-gray-600">
+          Categoría: {filteredModelos[selectedModel].category}
         </p>
-        <p>{filteredModelos[selectedModel].description}</p>
+        <p className="mb-4">{filteredModelos[selectedModel].description}</p>
       </div>
       <div className="p-4 flex-grow">
+        <form>
+      <h1 className="text-2xl font-bold text-center mt-4 mb-4">¿Te gustó este diseño?</h1>
+          <div className="relative z-0 w-full mb-6 group">
+            
+            <input
+              type="email"
+              name="floating_email"
+              id="floating_email"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              htmlFor="floating_email"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Mail
+            </label>
+          </div>
+          <div className="relative z-0 w-full mb-6 group">
+            <input
+              type="text"
+              name="floating_first_name"
+              id="floating_first_name"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              htmlFor="floating_first_name"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Nombre
+            </label>
+          </div>
 
+          <div className="relative z-0 w-full mb-6 group">
+            <input
+              type="tel"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              name="floating_phone"
+              id="floating_phone"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              htmlFor="floating_phone"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              N° Celular
+            </label>
 
-      <form>
-  <div class="relative z-0 w-full mb-6 group">
-    <input
-      type="email"
-      name="floating_email"
-      id="floating_email"
-      class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-      placeholder=" "
-      required
-    />
-    <label
-      for="floating_email"
-      class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-    >
-      Mail
-    </label>
-  </div>
-
-  <div class="grid md:grid-cols-2 md:gap-6">
-    <div class="relative z-0 w-full mb-6 group">
-      <input
-        type="text"
-        name="floating_first_name"
-        id="floating_first_name"
-        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-        placeholder=" "
-        required
-      />
-      <label
-        for="floating_first_name"
-        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-      >
-        Nombre
-      </label>
-    </div>
-
-    <div class="relative z-0 w-full mb-6 group">
-      <input
-        type="tel"
-        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-        name="floating_phone"
-        id="floating_phone"
-        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-        placeholder=" "
-        required
-      />
-      <label
-        for="floating_phone"
-        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-      >
-        N° Celular
-      </label>
-    </div>
-  </div>
-
-  <div className="relative z-0 w-full mb-6 group">
-    <textarea
-      name="floating_description"
-      id="floating_description"
-      className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-      placeholder=" "
-      required
-    />
-    <label
-      htmlFor="floating_description"
-      className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-    >
-      Descripción
-    </label>
-  </div>
-
-  <button
-    type="submit"
-    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-  >
-    Submit
-  </button>
-</form>
-
-
-            <div className="flex justify-end mt-4">
-          <button
-            className="bg-blue-500 text-white py-2 px-4 rounded-lg"
-            onClick={handleCloseModal}
-          >
-            Cerrar
-          </button>
-        </div>
+          <div className="relative z-0 w-full mt-4 mb-6 group">
+            <textarea
+              name="floating_description"
+              id="floating_description"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              htmlFor="floating_description"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              ¿Querés algún detalle diferente?
+            </label>
+          </div>
+          
+          </div>
+          <div className="flex justify-end mt-4">
+            <button
+              className="bg-blue-500 text-white py-2 px-4 rounded-lg mr-2"
+              onClick={handleCloseModal}
+            >
+              Cerrar
+            </button>
+            <button
+              type="submit"
+              className="bg-blue-500 text-white py-2 px-4 rounded-lg"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
-      )}
+)}
+
+
     </div>
   );
 };
