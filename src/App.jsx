@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "./components/Home/home";
 import { Button } from "@/components/ui/button"
 import NavBar from "./components/NavBar/navbar"
@@ -7,12 +7,14 @@ import MakeItReal from "./components/MakeItReal/MakeItReal"
 
 
 
+
 function App() {
 
+  const location = useLocation();
+
   return (
-    
-   <div>
-      <NavBar />
+    <div className="App">
+      {location.pathname !== '/' && <NavBar />}
 
       <Routes>
         <Route path="/" element={<Home />} />
