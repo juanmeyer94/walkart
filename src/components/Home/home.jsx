@@ -46,8 +46,8 @@ const Home = () => {
       <div className="absolute top-1/2 left-0 transform -translate-y-1/2 p-8">
         <h1 className="text-5xl text-white font-bold mb-4 ml-8">CALZADO</h1>
         <h1 className="text-5xl text-white font-bold mb-4 ml-8">DISEÑADO POR TI</h1>
-        <button className="bg-yellow-400 text-white px-6 py-2 rounded-full shadow-lg hover:bg-yellow-500 transition duration-300 ml-8 mt-8">
-          <Link to="/personalizar">PRUÉBALO AHORA</Link>
+        <button className="bg-yellow-400 text-black font-bold text-xl px-6 py-2 rounded-full shadow-lg hover:bg-yellow-500 transition duration-300 ml-8 mt-8">
+          <Link to="/makeitreal">PRUÉBALO AHORA</Link>
         </button>
       </div>
 
