@@ -3,6 +3,7 @@ import Home from "./components/Home/home";
 import { Button } from "@/components/ui/button"
 import NavBar from "./components/NavBar/navbar"
 import Models from "./components/Models/Models";
+import AboutUs from "./components/AboutUs/AboutUs";
 import MakeItReal from "./components/MakeItReal/MakeItReal";
 import AboutUs from "./components/AboutUs/AboutUs";
 
@@ -19,7 +20,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/makeitreal" element={<MakeItReal/>} />
         <Route path="/models" element={<Models />} />
-        <Route path="/aboutus" element={<AboutUs />} />        
+        <Route path="/aboutus" element={<AboutUs/>}/>
+        <Route path="/makeitreal" element={<MakeItReal />} />
+        
       </Routes>
     </div>
   )
