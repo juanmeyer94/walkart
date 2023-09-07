@@ -2,12 +2,9 @@ import air from "../Images/airwhite.jpg"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/Button"
 import { Checkbox } from "@/components/ui/checkbox"
-
-
-
-
-
 import { useState } from "react";
+import Models from "../Models/Models";
+
 
 const MakeItReal = () => {
     const [custom, setCustom] = useState({
@@ -65,6 +62,7 @@ const MakeItReal = () => {
 
    
     return (
+        <div>
         <div className="flex flex-col lg:flex-row w-full">
             <div className="lg:w-1/2 p-8 flex flex-col items-center mb-4 mt-4 py-4 px-4 mx-4 my-4">
 
@@ -142,6 +140,12 @@ const MakeItReal = () => {
                 <Input name="Cordones" value={custom.Cordones} onChange={handleInputChange} />
                 <br /></div> : null}
                 <Button onClick={handleSubmit} >SUBMIT</Button>
+            </div>
+            </div>
+            <div>
+            <h1 className="text-4xl font-bold text-center mt-8 mb-4">Otros personalizados para inspirarte...</h1>
+
+                <Models />
             </div>
         </div>
     );
