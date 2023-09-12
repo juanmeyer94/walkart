@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import NavDash from "./NavDash";
 
 const Dashboard = () => {
 
@@ -123,6 +124,18 @@ const Dashboard = () => {
       phone: "+1 (012) 345-6789",
       state: "Pendiente"
     },
+    {
+      name: "WaveGlide",
+      image: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-8.jpg",
+      description: "WaveGlide: zapatillas que te hacen sentir en las nubes.",
+      category: "Running",
+      order: 9,
+      client: "Daniel Brown",
+      price: 139.99,
+      mail: "daniel.brown@example.com",
+      phone: "+1 (901) 234-5678",
+      state: "Pendiente"
+    }
   ];
 
 
@@ -171,8 +184,29 @@ const Dashboard = () => {
     setIsImageLarge(!isImageLarge);
   };
 
+  //*PAGINADO*//
+
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
+
+  // Calcular el índice de inicio y fin para la página actual
+  const startIndex = page * rowsPerPage;
+  const endIndex = startIndex + rowsPerPage;
+  const paginatedData = data.slice(startIndex, endIndex);
+
 
   return (
+    <div>
+      <NavDash/>
     <div className="p-4">
       <table className="w-full bg-white border rounded-lg">
         <thead className="bg-gray-200">
@@ -185,7 +219,7 @@ const Dashboard = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item, index) => (
+          {paginatedData.map((item, index) => (
             <tr key={item.order} className="border-b hover:bg-gray-100">
               <td className="py-2 px-4 text-center">{item.order}</td>
               <td className="py-2 px-4 text-center">{item.client}</td>
@@ -306,7 +340,30 @@ const Dashboard = () => {
           </div>
         </div>
       )}
-
+{/* Paginación personalizada */}
+<div className="flex justify-between mt-4">
+        <div>
+          Mostrando {startIndex + 1}-{Math.min(endIndex, data.length)} de{" "}
+          {data.length} elementos
+        </div>
+        <div>
+          <button
+            onClick={() => handleChangePage(null, page - 1)}
+            disabled={page === 0}
+            className="px-2 py-1 rounded-lg bg-blue-500 hover:bg-blue-600 text-white mr-2"
+          >
+            Anterior
+          </button>
+          <button
+            onClick={() => handleChangePage(null, page + 1)}
+            disabled={endIndex >= data.length}
+            className="px-2 py-1 rounded-lg bg-blue-500 hover:bg-blue-600 text-white"
+          >
+            Siguiente
+          </button>
+        </div>
+      </div>
+    </div>
     </div>
   );
 };

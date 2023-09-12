@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import NavDash from "./NavDash";
+import NavBar from "../NavBar/navbar";
 
 const PostDash = ({ addNewModel }) => {
   const initialFormData = {
@@ -6,11 +8,7 @@ const PostDash = ({ addNewModel }) => {
     image: "",
     description: "",
     category: "",
-    order: "",
-    client: "",
     price: "",
-    mail: "",
-    phone: "",
     state: "Pendiente",
   };
 
@@ -28,9 +26,10 @@ const PostDash = ({ addNewModel }) => {
   };
 
   return (
-    <div className="p-4">
-      <h2 className="text-2xl font-semibold mb-4">Agregar Nueva Zapatilla</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
+    <div>
+      <NavDash />
+    <div className="p-4 bg-blue-200 min-h-screen">
+      <form onSubmit={handleSubmit} className="space-y-4 p-4">
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label htmlFor="name" className="block text-sm font-medium">
@@ -75,20 +74,26 @@ const PostDash = ({ addNewModel }) => {
           />
         </div>
         <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label htmlFor="category" className="block text-sm font-medium">
-              Categoría
-            </label>
-            <input
-              type="text"
-              id="category"
-              name="category"
-              value={formData.category}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
+        <div>
+  <label htmlFor="category" className="block text-sm font-medium">
+    Categoría
+  </label>
+  <select
+    id="category"
+    name="category"
+    value={formData.category}
+    onChange={handleChange}
+    required
+    className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+  >
+    <option value="">--Selecciona una categoría--</option>
+    <option value="Running">Running</option>
+    <option value="Formal">Formal</option>
+    <option value="Casual">Casual</option>
+    <option value="Outdoor">Outdoor</option>
+  </select>
+</div>
+
           <div>
             <label htmlFor="price" className="block text-sm font-medium">
               Precio
@@ -104,36 +109,6 @@ const PostDash = ({ addNewModel }) => {
             />
           </div>
         </div>
-        {/* <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label htmlFor="mail" className="block text-sm font-medium">
-              Correo Electrónico
-            </label>
-            <input
-              type="email"
-              id="mail"
-              name="mail"
-              value={formData.mail}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-          <div>
-            <label htmlFor="phone" className="block text-sm font-medium">
-              Teléfono
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-        </div> */}
         <div className="mt-8 flex justify-end">
           <button
             type="submit"
@@ -143,6 +118,7 @@ const PostDash = ({ addNewModel }) => {
           </button>
         </div>
       </form>
+    </div>
     </div>
   );
 };
